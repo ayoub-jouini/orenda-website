@@ -1,37 +1,63 @@
-import React from 'react';
-import '../../style/css/default-assets/classy-nav.css'
+import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { NavLink, Link } from 'react-router-dom';
 
 const Header = () => {
+
+    const [navToggler, setNavTogler] = useState("");
+    const [classyMenu, setClassyMenu] = useState("");
+    const [breakpoint, setBreakpoint] = useState("breakpoint-off")
+
+    const screen = useMediaQuery({ query: '(max-width: 991px)' })
+
+    useEffect(() => {
+        if (screen) {
+            setBreakpoint("breakpoint-on")
+        } else {
+            setBreakpoint("breakpoint-off")
+        }
+    }, [screen])
+
+    const navBarToggler = () => {
+        if (navToggler === "") {
+            setNavTogler("active");
+            setClassyMenu("menu-on");
+        } else {
+            setNavTogler("");
+            setClassyMenu("");
+        }
+    }
+
+
     return (
         <header className="header-area">
-            <div className="classy-nav-container breakpoint-off">
+            <div className={`classy-nav-container ${breakpoint}`}>
                 <div className="container">
 
                     <nav className="classy-navbar justify-content-between" id="conferNav">
 
 
-                        <a className="nav-brand" href="./index.html"><img src="./assets/images/core-img/logo.png" alt="" /></a>
+                        <Link to="/" className="nav-brand"><img src="./assets/images/core-img/logo.png" alt="" /></Link>
 
 
                         <div className="classy-navbar-toggler">
-                            <span className="navbarToggler"><span></span><span></span><span></span></span>
+                            <span className={`navbarToggler ${navToggler}`} onClick={navBarToggler}><span></span><span></span><span></span></span>
                         </div>
 
 
-                        <div className="classy-menu">
+                        <div className={`classy-menu ${classyMenu}`}>
 
-                            <div className="classycloseIcon">
-                                <div className="cross-wrap"><span className="top"></span><span class="bottom"></span></div>
+                            <div className="classycloseIcon" onClick={navBarToggler}>
+                                <div className="cross-wrap"><span className="top"></span><span className="bottom"></span></div>
                             </div>
 
                             <div className="classynav">
                                 <ul id="nav">
-                                    <li className="active"><a href="index.html">Home</a></li>
-
-                                    <li><a href="team.html">Team</a></li>
-                                    <li><a href="events.html">Events</a></li>
-                                    <li><a href="blog.html">Articles</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li ><NavLink to="/" activeClassName="active">Home</NavLink></li>
+                                    <li><NavLink to="/team" activeClassName="active">Team</NavLink></li>
+                                    <li><NavLink to="/events" activeClassName="active">Events</NavLink></li>
+                                    <li><NavLink to="/articles" activeClassName="active">Articles</NavLink></li>
+                                    <li><NavLink to="/contact" activeClassName="active">Contact</NavLink></li>
                                 </ul>
 
 
