@@ -1,12 +1,13 @@
 import './style/scss/style.scss'
-import 'bootstrap/dist/js/bootstrap'
 
 import Header from './components/Header/header';
+import Footer from './components/Footer/footer';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <Footer />
     </div>
   );
 }
