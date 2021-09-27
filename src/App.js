@@ -1,4 +1,3 @@
-import './App.css';
 import './style/scss/style.scss'
 import 'bootstrap/dist/js/bootstrap'
 
