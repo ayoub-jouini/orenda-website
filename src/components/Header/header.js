@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import NavMenu from './nav';
 
 const Header = () => {
 
@@ -51,18 +52,7 @@ const Header = () => {
                                 <div className="cross-wrap"><span className="top"></span><span className="bottom"></span></div>
                             </div>
 
-                            <div className="classynav">
-                                <ul id="nav">
-                                    <li ><NavLink to="/" activeClassName="active">Home</NavLink></li>
-                                    <li><NavLink to="/team" activeClassName="active">Team</NavLink></li>
-                                    <li><NavLink to="/events" activeClassName="active">Events</NavLink></li>
-                                    <li><NavLink to="/articles" activeClassName="active">Articles</NavLink></li>
-                                    <li><NavLink to="/contact" activeClassName="active">Contact</NavLink></li>
-                                </ul>
-
-
-
-                            </div>
+                            <NavMenu />
 
                         </div>
                     </nav>
