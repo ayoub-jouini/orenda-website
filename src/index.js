@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import ErrorBoundary from './components/Error Boundary/ErrorBoundary';
 import { BrowserRouter } from 'react-router-dom';
