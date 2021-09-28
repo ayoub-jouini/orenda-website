@@ -1,10 +1,11 @@
 import React from "react";
+import Welcome from "../components/Welcome/welcome";
 
 const HomePgae = () => {
     return (
-        <div>
-            zedrfgvbhnjk,
-        </div>
+        <>
+            <Welcome />
+        </>
     );
 
 }
