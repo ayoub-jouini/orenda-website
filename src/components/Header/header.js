@@ -9,7 +9,22 @@ const Header = () => {
     const [classyMenu, setClassyMenu] = useState("");
     const [breakpoint, setBreakpoint] = useState("breakpoint-off")
 
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [sticky, setSticky] = useState("");
+
     const screen = useMediaQuery({ query: '(max-width: 991px)' })
+
+    window.addEventListener("scroll", (e) => {
+        setScrollPosition(e.target.documentElement.scrollTop)
+    })
+
+    useEffect(() => {
+        if (scrollPosition > 0) {
+            setSticky("sticky");
+        } else {
+            setSticky("");
+        }
+    }, [scrollPosition])
 
     useEffect(() => {
         if (screen) {
@@ -31,7 +46,7 @@ const Header = () => {
 
 
     return (
-        <header className="header-area">
+        <header className={`header-area ${sticky}`} >
             <div className={`classy-nav-container ${breakpoint}`}>
                 <div className="container">
 
