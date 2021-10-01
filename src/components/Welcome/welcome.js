@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import {
     Carousel,
     CarouselItem,
-    CarouselControl,
-    CarouselCaption
+    CarouselControl
 } from 'reactstrap';
 
 
@@ -45,12 +44,12 @@ const Welcome = () => {
         setActiveIndex(nextIndex);
     }
 
-    const slides = Slides.map((item) => {
+    const slides = Slides.map((item, key) => {
         return (
             <CarouselItem
                 onExiting={() => setAnimating(true)}
                 onExited={() => setAnimating(false)}
-                key={item.src}
+                key={key}
             >
                 <div className="single-welcome-slide bg-img bg-overla jarallax" style={{ backgroundImage: 'url(' + item.image + ')' }
                 }>
@@ -67,7 +66,6 @@ const Welcome = () => {
                         </div>
                     </div>
                 </div >
-                <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
             </CarouselItem>
         );
     });
