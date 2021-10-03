@@ -1,10 +1,13 @@
 import React from "react";
+import Breadcrumb from "../components/Breadcrumb/breadcrumb"
+import Events from "../components/Events component/events";
 
 const EventsPage = () => {
     return (
-        <div>
-
-        </div>
+        <>
+            <Breadcrumb img="2.png" title="Our Events" />
+            <Events />
+        </>
     );
 
 }
