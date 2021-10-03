@@ -1,6 +1,6 @@
 import React from "react";
 import Breadcrumb from "../components/Breadcrumb/breadcrumb";
-import ExecutiveBoard from "../components/Executive Board/executiveBoard";
+import ExecutiveBoard from "../components/Team (team-page)/executiveBoard";
 
 const TeamPage = () => {
     return (
