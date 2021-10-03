@@ -1,10 +1,13 @@
 import React from "react";
+import Breadcrumb from "../components/Breadcrumb/breadcrumb"
+import Contact from "../components/Contact (contact-Page)/Contact";
 
 const ContactPage = () => {
     return (
-        <div>
-
-        </div>
+        <>
+            <Breadcrumb img="2.png" title="Contact" />
+            <Contact />
+        </>
     );
 
 }
