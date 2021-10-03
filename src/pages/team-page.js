@@ -1,11 +1,11 @@
 import React from "react";
-import { Breadcrumb } from "reactstrap";
+import Breadcrumb from "../components/Breadcrumb/breadcrumb";
 import ExecutiveBoard from "../components/Executive Board/executiveBoard";
 
 const TeamPage = () => {
     return (
         <>
-            <Breadcrumb title="Our Team" />
+            <Breadcrumb img="" title="Our Team" />
             <ExecutiveBoard />
 
         </>
