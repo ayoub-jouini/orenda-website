@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SingleBlog = ({ img, link, title, date, author, body }) => {
     return (
@@ -12,8 +13,8 @@ const SingleBlog = ({ img, link, title, date, author, body }) => {
                     <a className="blog-title" href={link}>{title}</a>
 
                     <div className="post-meta">
-                        <a className="post-date" href=""><i className="zmdi zmdi-alarm-check"></i>{date}</a>
-                        <a className="post-author" href=""><i className="zmdi zmdi-account"></i>{author}</a>
+                        <Link className="post-date" to="/"><i className="zmdi zmdi-alarm-check"></i>{date}</Link>
+                        <Link className="post-author" to="/"><i className="zmdi zmdi-account"></i>{author}</Link>
                     </div>
                     <p>{body}</p>
                 </div>

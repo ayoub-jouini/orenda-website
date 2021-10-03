@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SingleSponsor = ({ img }) => {
     return (
         <div className="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-            <a href=""><img src={`assets/images/core-img/${img}`} alt="" /></a>
+            <Link to="/"><img src={`assets/images/core-img/${img}`} alt="" /></Link>
         </div>
     );
 
