@@ -1,10 +1,8 @@
 import React from 'react';
-import "../../style/scss/_breadcrumb.scss";
 
-
-const Breadcrumb = ({ title }) => {
+const Breadcrumb = ({ img, title }) => {
     return (
-        <section className="breadcrumb-area bg-img bg-gradient-overlay" style={{ backgroundImage: "url(assets/images/bg-img/27.jpg)" }}>
+        <section className="breadcrumb-area bg-img bg-gradient-overlay" style={{ backgroundImage: `url(assets/images/bg-img/${img})` }}>
             <div className="container h-100">
                 <div className="row h-100 align-items-center">
                     <div className="col-12">
