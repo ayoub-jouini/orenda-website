@@ -26,7 +26,7 @@ const AboutUs = () => {
         }
         if (!inView) {
             animation.start({
-                y: -100,
+                y: +500,
                 opacity: 0
             })
         }
