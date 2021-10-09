@@ -1,6 +1,10 @@
-import React from 'react';
-import Member from './member';
+import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+
+import Member from './member';
+
 
 const members = [
     {
@@ -67,8 +71,32 @@ const members = [
 
 const Team = () => {
 
+    const [ref, inView] = useInView({
+        threshold: 0.2
+    });
+    const animation = useAnimation();
+    useEffect(() => {
+        if (inView) {
+            animation.start({
+                opacity: 1,
+                x: 0,
+                transition: {
+                    type: "spring",
+                    duration: 1
+                }
+            })
+        }
+        if (!inView) {
+            animation.start({
+                x: -100,
+                opacity: 0
+            })
+        }
+
+    }, [inView])
+
     return (
-        <section className="our-speaker-area bg-img bg-gradient-overlay section-padding-100-60" style={{ backgroundImage: "url(assets/images/bg-img/3.jpg)" }} id="team">
+        <section ref={ref} className="our-speaker-area bg-img bg-gradient-overlay section-padding-100-60" style={{ backgroundImage: "url(assets/images/bg-img/3.jpg)" }} id="team">
             <div className="container">
                 <div className="row">
 
@@ -82,7 +110,8 @@ const Team = () => {
 
 
 
-                <div className="row">
+                <motion.div className="row"
+                    animate={animation}>
 
 
                     {members.map((member, key) => {
@@ -101,7 +130,7 @@ const Team = () => {
                             <Link className="btn confer-btn-white" to="/team">view all Team <i className="zmdi zmdi-long-arrow-right"></i></Link>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
             </div>
         </section>
