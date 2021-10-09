@@ -1,11 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation, motion } from 'framer-motion';
+
 import SingleSponsor from './single-sponsor';
 
 const sponsors = ["p-1.png", "p-2.png", "p-3.png", "p-4.png"]
 
 const Sponsors = () => {
+
+    const [ref, inView] = useInView({
+        threshold: 0.2
+    });
+    const animation = useAnimation();
+    useEffect(() => {
+        if (inView) {
+            animation.start({
+                opacity: 1,
+                x: 0,
+                transition: {
+                    type: "spring",
+                    duration: 1.5
+                }
+            })
+        }
+        if (!inView) {
+            animation.start({
+                x: -500,
+                opacity: 0
+            })
+        }
+
+    }, [inView])
+
     return (
-        <section className="our-sponsor-client-area section-padding-100">
+        <section ref={ref} className="our-sponsor-client-area section-padding-100">
             <div className="container">
                 <div className="row">
 
@@ -20,7 +48,8 @@ const Sponsors = () => {
                 <div className="row">
                     <div className="col-12">
 
-                        <div className="our-sponsor-area d-flex flex-wrap">
+                        <motion.div className="our-sponsor-area d-flex flex-wrap"
+                            animate={animation}>
                             {
                                 sponsors.map((sponsor, key) => {
                                     return (
@@ -29,7 +58,7 @@ const Sponsors = () => {
                                     );
                                 })
                             }
-                        </div>
+                        </motion.div>
                     </div>
 
 
