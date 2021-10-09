@@ -82,13 +82,13 @@ const Team = () => {
                 x: 0,
                 transition: {
                     type: "spring",
-                    duration: 1
+                    duration: 1.5
                 }
             })
         }
         if (!inView) {
             animation.start({
-                x: -100,
+                x: -500,
                 opacity: 0
             })
         }
