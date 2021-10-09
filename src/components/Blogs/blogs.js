@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation, motion } from 'framer-motion';
+
 import SingleBlog from "./single-blog";
 
 const blogs = [
@@ -53,10 +56,36 @@ const blogs = [
 ];
 
 const Blogs = () => {
+
+    const [ref, inView] = useInView({
+        threshold: 0.2
+    });
+    const animation = useAnimation();
+    useEffect(() => {
+        if (inView) {
+            animation.start({
+                opacity: 1,
+                y: 0,
+                transition: {
+                    type: "spring",
+                    duration: 1.5
+                }
+            })
+        }
+        if (!inView) {
+            animation.start({
+                y: +500,
+                opacity: 0
+            })
+        }
+
+    }, [inView])
+
     return (
-        <section className="our-blog-area bg-img bg-gradient-overlay section-padding-100-60" style={{ backgroundImage: "url(assets/images/bg-img/17.jpg)" }} id="article">
+        <section ref={ref} className="our-blog-area bg-img bg-gradient-overlay section-padding-100-60" style={{ backgroundImage: "url(assets/images/bg-img/17.jpg)" }} id="article">
             <div className="container">
-                <div className="row">
+                <motion.div className="row"
+                    animate={animation}>
                     <div className="col-12">
 
                         <div className="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
@@ -84,7 +113,7 @@ const Blogs = () => {
                             <a className="btn confer-btn-white" href="blog.html">view all Articles <i className="zmdi zmdi-long-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
