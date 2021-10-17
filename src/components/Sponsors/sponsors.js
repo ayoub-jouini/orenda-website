@@ -1,36 +1,14 @@
-import React, { useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { useAnimation, motion } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 import SingleSponsor from './single-sponsor';
+import useAnimationHook from '../../utils/animation-hook';
 
 const sponsors = ["p-1.png", "p-2.png", "p-3.png", "p-4.png"]
 
 const Sponsors = () => {
 
-    const [ref, inView] = useInView({
-        threshold: 0.2
-    });
-    const animation = useAnimation();
-    useEffect(() => {
-        if (inView) {
-            animation.start({
-                opacity: 1,
-                x: 0,
-                transition: {
-                    type: "spring",
-                    duration: 1.5
-                }
-            })
-        }
-        if (!inView) {
-            animation.start({
-                x: -500,
-                opacity: 0
-            })
-        }
-
-    }, [inView])
+    const { animation, ref } = useAnimationHook();
 
     return (
         <section ref={ref} className="our-sponsor-client-area section-padding-100">

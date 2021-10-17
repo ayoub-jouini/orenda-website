@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { useAnimation, motion } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 import Member from './member';
+import useAnimationHook from '../../utils/animation-hook';
 
 
 const members = [
@@ -71,29 +71,7 @@ const members = [
 
 const Team = () => {
 
-    const [ref, inView] = useInView({
-        threshold: 0.2
-    });
-    const animation = useAnimation();
-    useEffect(() => {
-        if (inView) {
-            animation.start({
-                opacity: 1,
-                x: 0,
-                transition: {
-                    type: "spring",
-                    duration: 1.5
-                }
-            })
-        }
-        if (!inView) {
-            animation.start({
-                x: -500,
-                opacity: 0
-            })
-        }
-
-    }, [inView])
+    const { animation, ref } = useAnimationHook();
 
     return (
         <section ref={ref} className="our-speaker-area bg-img bg-gradient-overlay section-padding-100-60" style={{ backgroundImage: "url(assets/images/bg-img/3.jpg)" }} id="team">

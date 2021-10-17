@@ -116,9 +116,9 @@ const members = [
 
 const ExecutiveBoard = () => {
     return (
-        <section class="our-speaker-area section-padding-100">
-            <div class="container">
-                <div class="row">
+        <section className="our-speaker-area section-padding-100">
+            <div className="container">
+                <div className="row">
                     {
                         members.map((member, key) => {
                             return (
