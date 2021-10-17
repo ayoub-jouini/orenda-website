@@ -39,6 +39,8 @@
         background: $primary;
         background-image: -webkit-linear-gradient(120deg, rgb(80, 90, 221) 0%, rgb(223, 66, 177) 100%);
         background-image: -ms-linear-gradient(120deg, rgb(80, 90, 221) 0%, rgb(223, 66, 177) 100%);
+        background-image: -webkit-linear-gradient(
+            120deg, #744A7D 0%, #C5373F 100%);
         z-index: -2;
     }
 

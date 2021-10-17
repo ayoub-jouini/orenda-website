@@ -25,6 +25,11 @@
     }
 }
 
+.bg-gradient-overlay::after{
+    background-image: -webkit-linear-gradient(
+120deg, #744A7D 0%, #C5373F 100%);
+}
+
 .single-speaker-area {
     position: relative;
     z-index: 1;
