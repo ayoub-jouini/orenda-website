@@ -123,6 +123,21 @@
         }
     }
 }
+//Create the parallax scrolling effect 
+.parallax {
+    background-attachment: fixed;
+    @media #{$breakpoint-lg} {
+    background-attachment: scroll;
+    }
+
+    @media #{$breakpoint-md} {
+    background-attachment: scroll;
+    }
+
+    @media #{$breakpoint-xs} {
+    background-attachment: scroll;
+    }
+}
 
 .single-welcome-slide {
     position: relative;

@@ -51,7 +51,7 @@ const Welcome = () => {
                 onExited={() => setAnimating(false)}
                 key={key}
             >
-                <div className="single-welcome-slide bg-img bg-overla jarallax" style={{ backgroundImage: 'url(' + item.image + ')' }
+                <div className="single-welcome-slide bg-img bg-overla jarallax parallax" style={{ backgroundImage: 'url(' + item.image + ')' }
                 }>
                     <div className="container h-100">
                         <div className="row h-100 align-items-center">
