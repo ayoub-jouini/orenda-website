@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import ScheduleTab from './schedule-tab';
-import useAnimationHook from '../../utils/animation-hook';
+import useAnimationHook from '../../utils/hooks/animation-hook';
 
 const events = [
     {

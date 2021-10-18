@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import AboutContent from './about-content';
 import AboutThumb from './about-thumb';
 import CounterUpArea from './counterUp-area';
-import useAnimationHook from '../../utils/animation-hook';
+import useAnimationHook from '../../utils/hooks/animation-hook';
 
 
 const AboutUs = () => {

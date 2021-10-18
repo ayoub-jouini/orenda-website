@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import ContactForm from "./contact-form";
 import ContactInfo from "./contact-info";
-import useAnimationHook from '../../utils/animation-hook';
+import useAnimationHook from '../../utils/hooks/animation-hook';
 
 const Contact = () => {
 

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 import Member from './member';
-import useAnimationHook from '../../utils/animation-hook';
+import useAnimationHook from '../../utils/hooks/animation-hook';
 
 
 const members = [

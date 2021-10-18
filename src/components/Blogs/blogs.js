@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import SingleBlog from "./single-blog";
-import useAnimationHook from '../../utils/animation-hook';
+import useAnimationHook from '../../utils/hooks/animation-hook';
 
 const blogs = [
     {

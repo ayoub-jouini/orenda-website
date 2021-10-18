@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import SingleSponsor from './single-sponsor';
-import useAnimationHook from '../../utils/animation-hook';
+import useAnimationHook from '../../utils/hooks/animation-hook';
 
 const sponsors = ["p-1.png", "p-2.png", "p-3.png", "p-4.png"]
 
