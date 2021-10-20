@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import dataValidation from "../../utils/data-validation";
 
 const ContactForm = () => {
 
@@ -26,6 +27,7 @@ const ContactForm = () => {
 
     const submitForm = (event) => {
         event.preventDefault();
+        dataValidation(name, lastName, email, number, message);
     }
 
     return (
@@ -44,7 +46,7 @@ const ContactForm = () => {
 
                             <div className="col-12 col-lg-6">
                                 <div className="form-group">
-                                    <input type="text" className="form-control mb-30" name="name" id="name2" placeholder="Last Name" value={lastName} onChange={handleLastName} />
+                                    <input type="text" className="form-control mb-30" name="lastName" id="name2" placeholder="Last Name" value={lastName} onChange={handleLastName} />
                                 </div>
                             </div>
 
