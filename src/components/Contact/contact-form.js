@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import dataValidation from "../../utils/data-validation";
+import axios from 'axios';
 
 const ContactForm = () => {
 
@@ -26,8 +26,9 @@ const ContactForm = () => {
     }
 
     const submitForm = (event) => {
-        event.preventDefault();
-        dataValidation(name, lastName, email, number, message);
+        axios.post("http://localhost/orenda-website/php/mail.php",
+            JSON.stringify({ name, lastName, email, number, message })
+        )
     }
 
     return (
